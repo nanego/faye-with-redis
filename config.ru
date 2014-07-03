@@ -2,6 +2,7 @@ require 'rubygems'
 require 'bundler'
 Bundler.require
 require 'faye'
+require 'faye/redis'
 
 require File.expand_path('../config/initializers/faye_token.rb', __FILE__)
 
@@ -20,7 +21,7 @@ faye_server = Faye::RackAdapter.new(
 			:mount => '/faye', 
 			:timeout => 25,
 			:engine => {
-				:type => 'redis',
+				:type => Faye::Redis,
 				:host => 'soldierfish.redistogo.com',
 				:port => '9990',
 				:password => '7a6fda01cb99ab80dca534f22003d699',
