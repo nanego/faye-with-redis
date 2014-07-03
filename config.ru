@@ -27,5 +27,5 @@ faye_server = Faye::RackAdapter.new(
 				:password => '7a6fda01cb99ab80dca534f22003d699',
 				:database => 1
 			})
-faye_server.add_extension(ServerAuth.new)
+# faye_server.add_extension(ServerAuth.new)
 run faye_server
